@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  web:
+    build: .
+    command: bash -c "php -S '0.0.0.0:80' -t './app/public' './app/public/index.php'"
+    volumes:
+      - .:/projects
+    ports:
+      - "80:80"
+    restart: always
